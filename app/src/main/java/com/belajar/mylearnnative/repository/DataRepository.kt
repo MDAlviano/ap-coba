@@ -2,6 +2,7 @@ package com.belajar.mylearnnative.repository
 
 import android.util.Log
 import com.belajar.mylearnnative.api.ApiService
+import com.belajar.mylearnnative.model.Achievement
 import com.belajar.mylearnnative.model.Player
 import com.belajar.mylearnnative.model.PlayerRole
 import com.belajar.mylearnnative.model.Team
@@ -49,6 +50,62 @@ object DataRepository {
         return players
     }
 
+    fun getListAchievement(endpoint: String, teamId: Int): List<Achievement> {
+        val achievements = mutableListOf<Achievement>()
+        try {
+            val response = ApiService.getRequest("api/achievements/$teamId") ?: return emptyList()
+            Log.d(TAG, "Raw response: $response")
+            try {
+                val jsonArray = JSONArray(response)
+                parseAchievementsFromJson(jsonArray, achievements)
+            } catch (e: JSONException) {
+                Log.e(TAG, "JSON parsing error: ${e.message}")
+                Log.e(TAG, "Invalid JSON response: $response")
+            }
+        } catch (e: JSONException) {
+            Log.e(TAG, "Error getting data: ${e.message}")
+        }
+        return achievements
+    }
+
+    fun getListPlayerTeam(endpoint: String, teamId: Int): List<Player> {
+        val players = mutableListOf<Player>()
+        try {
+            val response = ApiService.getRequest("api/players/team/$teamId") ?: return emptyList()
+            Log.d(TAG, "Raw response: $response")
+            try {
+                val jsonArray = JSONArray(response)
+                parsePlayersFromJson(jsonArray, players)
+            } catch (e: JSONException) {
+                Log.e(TAG, "JSON parsing error: ${e.message}")
+                Log.e(TAG, "Invalid JSON response: $response")
+            }
+        } catch (e: JSONException) {
+            Log.e(TAG, "Error getting data: ${e.message}")
+        }
+        return players
+    }
+
+    private fun parseAchievementsFromJson(
+        jsonArray: JSONArray,
+        achievement: MutableList<Achievement>
+    ) {
+        for (i in 0 until jsonArray.length()) {
+            try {
+                val jsonObject = jsonArray.getJSONObject(i)
+                achievement.add(
+                    Achievement(
+                        id = jsonObject.getInt("id"),
+                        teamId = jsonObject.getInt("teamId"),
+                        name = jsonObject.getString("name")
+                    )
+                )
+            } catch (e: JSONException) {
+                Log.e(TAG, "Error parsing team at index $i: ${e.message}", e)
+            }
+        }
+    }
+
     private fun parseTeamsFromJson(jsonArray: JSONArray, teams: MutableList<Team>) {
         for (i in 0 until jsonArray.length()) {
             try {
@@ -87,7 +144,7 @@ object DataRepository {
                     name = roleJsonObject?.getString("name") ?: "Unknown"
                 )
 
-                val teamJsonObject =jsonObject.optJSONObject("team")
+                val teamJsonObject = jsonObject.optJSONObject("team")
                 val team = Team(
                     id = teamJsonObject?.getInt("id") ?: 0,
                     name = teamJsonObject?.getString("name") ?: "unknown",

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.belajar.mylearnnative.R
 import com.belajar.mylearnnative.model.Team
 
-class TeamAdapter(private var teamList: List<Team>) :
+class TeamAdapter(private var teamList: List<Team>, private val onCLick: (Team) -> Unit) :
     RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
 
     class TeamViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -33,6 +33,7 @@ class TeamAdapter(private var teamList: List<Team>) :
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         val item = teamList[position]
         holder.teamName.text = item.name
+        holder.itemView.setOnClickListener { onCLick(item) }
     }
 
 }

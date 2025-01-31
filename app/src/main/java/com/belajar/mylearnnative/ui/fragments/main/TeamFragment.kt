@@ -1,5 +1,6 @@
-package com.belajar.mylearnnative.ui.fragments
+package com.belajar.mylearnnative.ui.fragments.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,8 +13,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.belajar.mylearnnative.R
+import com.belajar.mylearnnative.constants.Constants
 import com.belajar.mylearnnative.model.Team
 import com.belajar.mylearnnative.repository.DataRepository
+import com.belajar.mylearnnative.ui.activity.DetailTeamActivity
 import com.belajar.mylearnnative.ui.adapter.TeamAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -43,7 +46,11 @@ class TeamFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        val teamAdapter = TeamAdapter(listTeam)
+        val teamAdapter = TeamAdapter(listTeam) { team ->
+            val intent = Intent(requireContext(), DetailTeamActivity::class.java)
+            intent.putExtra(Constants.DETAIL_TEAM, team)
+            startActivity(intent)
+        }
         rvTeam.apply {
             adapter = teamAdapter
             layoutManager = LinearLayoutManager(requireContext())

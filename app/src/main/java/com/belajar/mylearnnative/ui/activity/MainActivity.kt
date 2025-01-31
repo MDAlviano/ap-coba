@@ -2,11 +2,10 @@ package com.belajar.mylearnnative.ui.activity
 
 import android.os.Bundle
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.belajar.mylearnnative.R
-import com.belajar.mylearnnative.ui.fragments.PlayerFragment
-import com.belajar.mylearnnative.ui.fragments.TeamFragment
+import com.belajar.mylearnnative.ui.fragments.main.PlayerFragment
+import com.belajar.mylearnnative.ui.fragments.main.TeamFragment
 import com.belajar.mylearnnative.utils.PreferencesHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

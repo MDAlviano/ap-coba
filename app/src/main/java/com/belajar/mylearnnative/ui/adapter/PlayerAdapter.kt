@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.belajar.mylearnnative.R
 import com.belajar.mylearnnative.model.Player
 
-class PlayerAdapter(private var playerList: List<Player>) :
+class PlayerAdapter(private var playerList: List<Player>, private val onClick: (Player) -> Unit) :
     RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
 
     class PlayerViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -33,5 +33,6 @@ class PlayerAdapter(private var playerList: List<Player>) :
         val item = playerList[position]
         holder.playerName.text = item.ign
         holder.playerRole.text = "(${item.playerRole.name})"
+        holder.itemView.setOnClickListener { onClick(item) }
     }
 }

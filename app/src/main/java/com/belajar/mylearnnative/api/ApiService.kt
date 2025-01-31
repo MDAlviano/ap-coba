@@ -8,7 +8,6 @@ import java.net.URL
 object ApiService {
 
     const val BASE_URL = " http://10.0.2.2:5000"
-    const val TAG = "API_SERVICE"
 
     fun postRequest(endpoint: String, jsonBody: JSONObject): String? {
         val url = URL("$BASE_URL/$endpoint")
