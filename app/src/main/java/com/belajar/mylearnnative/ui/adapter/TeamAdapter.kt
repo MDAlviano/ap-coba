@@ -1,5 +1,7 @@
 package com.belajar.mylearnnative.ui.adapter
 
+import android.app.Activity
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +10,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.belajar.mylearnnative.R
 import com.belajar.mylearnnative.model.Team
+import java.net.HttpURLConnection
+import java.net.URL
 
 class TeamAdapter(private var teamList: List<Team>, private val onCLick: (Team) -> Unit) :
     RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
 
     class TeamViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val img: ImageView = view.findViewById(R.id.iTeam)
+        val teamImg: ImageView = view.findViewById(R.id.iTeam)
         val teamName: TextView = view.findViewById(R.id.tvTeamName)
     }
 
@@ -32,6 +36,26 @@ class TeamAdapter(private var teamList: List<Team>, private val onCLick: (Team) 
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         val item = teamList[position]
+        val img = " http://10.0.2.2:5000/logos/${item.logo256}"
+
+        Thread {
+            try {
+                val url = URL(img)
+                val connection = url.openConnection() as HttpURLConnection
+                connection.doInput = true
+                connection.connect()
+
+                val inputStream = connection.inputStream
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+
+                (holder.itemView.context as Activity).runOnUiThread {
+                    holder.teamImg.setImageBitmap(bitmap)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }.start()
+
         holder.teamName.text = item.name
         holder.itemView.setOnClickListener { onCLick(item) }
     }

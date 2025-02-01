@@ -1,5 +1,7 @@
 package com.belajar.mylearnnative.repository
 
+import android.app.Activity
+import android.graphics.BitmapFactory
 import android.util.Log
 import com.belajar.mylearnnative.api.ApiService
 import com.belajar.mylearnnative.model.Achievement
@@ -8,6 +10,8 @@ import com.belajar.mylearnnative.model.PlayerRole
 import com.belajar.mylearnnative.model.Team
 import org.json.JSONArray
 import org.json.JSONException
+import java.net.HttpURLConnection
+import java.net.URL
 
 object DataRepository {
 
