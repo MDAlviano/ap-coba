@@ -53,6 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="2dp"
-        app:menu="@menu/bottom_nav_team_menu" />
+        app:menu="@menu/bottom_nav_team_menu"
+        app:itemTextColor="@color/nav_item_color"
+        app:itemBackground="@color/nav_background"
+        app:itemIconSize="@null"/>
 
 </RelativeLayout>
