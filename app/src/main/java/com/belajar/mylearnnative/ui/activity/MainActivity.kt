@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun getUsername() {
         val preferences = PreferencesHelper(this)
         val username = preferences.getUsername() ?: "Guest"
-        tvUsername.text = "Halo, $username!"
+        tvUsername.text = "Halo, $username 👋"
     }
 
     private fun setupBottomNavigation() {

@@ -13,6 +13,7 @@ import java.net.URL
 
 class DetailPlayerActivity : AppCompatActivity() {
 
+    private lateinit var iBack: ImageView
     private lateinit var iPlayer: ImageView
     private lateinit var tvFullName: TextView
     private lateinit var tvUsername: TextView
@@ -30,6 +31,10 @@ class DetailPlayerActivity : AppCompatActivity() {
         tvRole.text = data?.playerRole?.name
 
         getImage(data?.image)
+
+        iBack.setOnClickListener {
+            finish()
+        }
 
     }
 
@@ -55,6 +60,7 @@ class DetailPlayerActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
+        iBack = findViewById(R.id.iBackDetailPlayer)
         iPlayer = findViewById(R.id.iDetailPlayer)
         tvFullName = findViewById(R.id.tvDetailFullName)
         tvUsername = findViewById(R.id.tvDetailUsername)

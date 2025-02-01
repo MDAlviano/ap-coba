@@ -5,24 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.activity.DetailTeamActivity">
 
     <LinearLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:orientation="vertical"
-        android:padding="10dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tvBackDetailTeam"
+        <ImageView
+            android:id="@+id/iBackDetailTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="back" />
+            android:layout_gravity="center"
+            android:src="@drawable/left"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="14dp"
+            android:text="Detail Tim"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -31,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_nav_team"
-        android:layout_below="@id/top_bar"/>
+        android:layout_below="@id/top_bar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_team"

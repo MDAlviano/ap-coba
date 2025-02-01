@@ -5,23 +5,26 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.belajar.mylearnnative.R
 import com.belajar.mylearnnative.repository.AuthRepository
+import com.google.android.material.textfield.TextInputEditText
 import kotlin.concurrent.thread
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var etFullName: EditText
-    private lateinit var etUsername: EditText
-    private lateinit var etEmail: EditText
-    private lateinit var etPhoneNumber: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var etFullName: TextInputEditText
+    private lateinit var etUsername: TextInputEditText
+    private lateinit var etEmail: TextInputEditText
+    private lateinit var etPhoneNumber: TextInputEditText
+    private lateinit var etPassword: TextInputEditText
     private lateinit var bRegister: Button
     private lateinit var tvToLogin: TextView
+    private lateinit var iBack: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
+        iBack = findViewById(R.id.iBackFromReg)
         etFullName = findViewById(R.id.etFullNameReg)
         etUsername = findViewById(R.id.etUsernameReg)
         etEmail = findViewById(R.id.etEmailReg)
@@ -59,6 +63,10 @@ class RegisterActivity : AppCompatActivity() {
 
         tvToLogin.setOnClickListener {
             navigateToLogin()
+        }
+
+        iBack.setOnClickListener {
+            finish()
         }
     }
 

@@ -1,6 +1,7 @@
 package com.belajar.mylearnnative.ui.activity
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -15,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DetailTeamActivity : AppCompatActivity() {
 
-    private lateinit var tvBack: TextView
+    private lateinit var iBack: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class DetailTeamActivity : AppCompatActivity() {
     }
 
     private fun onClickHandler() {
-        tvBack.setOnClickListener {
+        iBack.setOnClickListener {
             finish()
         }
     }
@@ -64,7 +65,7 @@ class DetailTeamActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        tvBack = findViewById(R.id.tvBackDetailTeam)
+        iBack = findViewById(R.id.iBackDetailTeam)
     }
 
     private fun createFragment(fragment: Fragment, data: Team?): Fragment {

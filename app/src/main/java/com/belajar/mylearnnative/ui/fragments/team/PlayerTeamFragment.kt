@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.belajar.mylearnnative.R
@@ -52,7 +53,7 @@ class PlayerTeamFragment : Fragment() {
         }
         rvPlayerTeam.apply {
             adapter = playerAdapter
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = GridLayoutManager(requireContext(), 2)
             setHasFixedSize(true)
         }
     }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,13 +13,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.belajar.mylearnnative.R
 import com.belajar.mylearnnative.repository.AuthRepository
 import com.belajar.mylearnnative.utils.PreferencesHelper
+import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
 import kotlin.concurrent.thread
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var etUsername: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var iBack: ImageView
+    private lateinit var etUsername: TextInputEditText
+    private lateinit var etPassword: TextInputEditText
     private lateinit var bLogin: Button
     private lateinit var tvToRegister: TextView
 
@@ -33,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
+        iBack = findViewById(R.id.iBackFromLogin)
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         bLogin = findViewById(R.id.bLogin)
@@ -54,6 +58,10 @@ class LoginActivity : AppCompatActivity() {
 
         tvToRegister.setOnClickListener {
             navigateToRegister()
+        }
+
+        iBack.setOnClickListener {
+            finish()
         }
 
     }

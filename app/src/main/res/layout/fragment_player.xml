@@ -3,14 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="@color/white">
 
     <SearchView
         android:id="@+id/svPlayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:queryHint="Cari berdasarkan nama..." />
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:queryHint="Cari nama Pemain..." />
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
