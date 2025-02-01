@@ -24,7 +24,7 @@ class AboutTeamFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_about_team, container, false)
 
         val data = arguments?.getParcelable<Team>(Constants.DETAIL_TEAM)
-        getImage(data?.logo500, view.findViewById(R.id.iDetailTeam))
+        getImage(data?.logo256, view.findViewById(R.id.iDetailTeam))
         view.findViewById<TextView>(R.id.tvDetailNameTeam).text = data?.name
         view.findViewById<TextView>(R.id.tvDetailAboutTeam).text = data?.about
 

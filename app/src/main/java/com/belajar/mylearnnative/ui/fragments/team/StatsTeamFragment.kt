@@ -39,14 +39,14 @@ class StatsTeamFragment : Fragment() {
 
         val data = arguments?.getParcelable<Team>(Constants.DETAIL_TEAM)
 
-        tvDeaths.text = "Deaths: ${data?.deaths.toString()}"
-        tvKills.text = "Kills: ${data?.kills.toString()}"
-        tvAssists.text = "Assists: ${data?.assists.toString()}"
-        tvGold.text = "Gold: ${data?.gold.toString()}"
-        tvDamage.text = "Damage: ${data?.damage.toString()}"
-        tvLordKills.text = "Lord Kills: ${data?.lordKills.toString()}"
-        tvTortoiseKills.text = "Tortoise Kills: ${data?.tortoiseKills.toString()}"
-        tvTowerDestroy.text = "Tower Destroy: ${data?.towerDestroy.toString()}"
+        tvDeaths.text = "${data?.deaths.toString()} Deaths"
+        tvKills.text = "${data?.kills.toString()} Kills"
+        tvAssists.text = "${data?.assists.toString()} Assists"
+        tvGold.text = "${data?.gold.toString()} Gold"
+        tvDamage.text = "${data?.damage.toString()} Damage"
+        tvLordKills.text = "${data?.lordKills.toString()} Lord Kills"
+        tvTortoiseKills.text = "${data?.tortoiseKills.toString()} Tortoise Kills"
+        tvTowerDestroy.text = "${data?.towerDestroy.toString()} Tower Destroy"
 
         return view
     }

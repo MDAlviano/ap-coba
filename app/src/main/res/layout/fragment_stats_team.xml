@@ -1,136 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:padding="10dp">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvDeaths"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/deaths"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvKills"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvDeaths"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/kills"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvAssists"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvKills"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/assists"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvGold"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvAssists"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/gold"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvDamage"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvGold"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/damage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvLordKills"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvDamage"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/lord_kills"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvTortoiseKills"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvLordKills"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_margin="4dp">
+                <ImageView
+                    android:src="@drawable/tortoise_kills"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
 
-        <TextView
-            android:id="@+id/tvTowerDestroy"
-            android:text="text"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvTortoiseKills"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"/>
+            android:padding="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="4dp">
 
-    </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center">
 
-</LinearLayout>
+                <ImageView
+                    android:src="@drawable/towe_destroy"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/tvTowerDestroy"
+                    android:text="text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/iDetailTeam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@drawable/ic_launcher_background"
             android:layout_marginTop="64dp"/>
 
@@ -23,15 +23,21 @@
             android:id="@+id/tvDetailNameTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
             android:text="Team"
-            android:textSize="20sp" />
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvDetailAboutTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lorem ipsum dolor sit amet"
-            android:layout_marginHorizontal="16dp"/>
+            android:layout_margin="14dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/color4"/>
 
     </LinearLayout>
 
