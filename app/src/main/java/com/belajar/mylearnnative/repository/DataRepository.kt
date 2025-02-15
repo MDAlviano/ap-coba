@@ -27,10 +27,12 @@ object DataRepository {
                 val jsonArray = JSONArray(response)
                 parseTeamsFromJson(jsonArray, teams)
             } catch (e: JSONException) {
+                e.printStackTrace()
                 Log.e(TAG, "JSON parsing error: ${e.message}")
                 Log.e(TAG, "Invalid JSON response: $response")
             }
         } catch (e: JSONException) {
+            e.printStackTrace()
             Log.e(TAG, "Error getting data: ${e.message}")
         }
         return teams

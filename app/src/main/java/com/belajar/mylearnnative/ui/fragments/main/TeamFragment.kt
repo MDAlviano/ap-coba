@@ -43,6 +43,8 @@ class TeamFragment : Fragment() {
         setupSearchView()
         loadTeams()
 
+        Log.d("listTeam", listTeam.toString())
+
         return view
     }
 
@@ -67,6 +69,7 @@ class TeamFragment : Fragment() {
                     if (teams.isNotEmpty()) {
                         listTeam.clear()
                         listTeam.addAll(teams)
+                        Log.d("listTeam", teams.toString())
                         rvTeam.adapter?.notifyDataSetChanged()
                     } else {
                         Toast.makeText(requireContext(), "No Teams Found", Toast.LENGTH_SHORT)

@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             }
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)  // Tambahkan ini agar bisa kembali ke fragment sebelumnya
+                .addToBackStack(null)
                 .commit()
             true
         }
